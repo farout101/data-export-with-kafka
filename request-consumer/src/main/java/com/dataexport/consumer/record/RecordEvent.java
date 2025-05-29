@@ -1,4 +1,7 @@
-package com.dataexport.consumer.model;
+package com.dataexport.consumer.record;
+
+import com.dataexport.consumer.enu.FileFormat;
+import com.dataexport.consumer.enu.TransactionType;
 
 import java.time.LocalDateTime;
 

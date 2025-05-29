@@ -1,6 +1,6 @@
 package com.dataexport.consumer.service;
 
-import com.dataexport.consumer.model.RecordEvent;
+import com.dataexport.consumer.record.RecordEvent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.kafka.annotation.KafkaListener;
