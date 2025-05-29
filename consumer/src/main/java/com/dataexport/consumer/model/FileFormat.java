@@ -1,4 +1,4 @@
-package com.dataexport.consumer.config.model;
+package com.dataexport.consumer.model;
 
 import lombok.Getter;
 

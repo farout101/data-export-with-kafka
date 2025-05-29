@@ -1,4 +1,4 @@
-package com.dataexport.consumer.config.model;
+package com.dataexport.consumer.model;
 
 
 import jakarta.persistence.Entity;
@@ -9,4 +9,6 @@ public class Transaction {
 
     @Id
     Integer transaction_id;
+
+    //TODO: MAKE THE TRANSACTION MODEL ON PER WITH TRANSACTION DATABASE
 }

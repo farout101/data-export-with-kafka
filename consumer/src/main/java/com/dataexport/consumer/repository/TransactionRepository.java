@@ -1,4 +1,4 @@
-package com.dataexport.consumer.config.repository;
+package com.dataexport.consumer.repository;
 
 
 import jakarta.transaction.Transaction;
