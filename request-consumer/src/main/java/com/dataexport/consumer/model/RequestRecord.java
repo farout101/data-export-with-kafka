@@ -1,7 +1,7 @@
-package com.test.requestproducer.record;
+package com.dataexport.consumer.model;
 
-import com.test.requestproducer.enu.FileFormat;
-import com.test.requestproducer.enu.TransactionType;
+import com.dataexport.consumer.enu.FileFormat;
+import com.dataexport.consumer.enu.TransactionType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,8 +9,8 @@ import lombok.NoArgsConstructor;
 import java.time.LocalDateTime;
 
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 public class RequestRecord {
     private Integer export_id;
     private FileFormat file_format;
