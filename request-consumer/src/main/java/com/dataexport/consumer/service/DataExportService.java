@@ -1,6 +1,5 @@
 package com.dataexport.consumer.service;
 
-import java.sql.*;
 import java.util.*;
 import java.io.*;
 
@@ -8,7 +7,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-public class ExporterService {
+public class DataExportService {
 
     static void writeJson(List<Map<String, Object>> data, String filename) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
@@ -56,5 +55,9 @@ public class ExporterService {
                 workbook.write(out);
             }
         }
+    }
+
+    public void export(Integer exportId, List<?> data) {
+
     }
 }

@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class InterbankTransfer {
+public class InterbankTransaction {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
