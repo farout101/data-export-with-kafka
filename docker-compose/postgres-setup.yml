@@ -1,0 +1,19 @@
+# Run the following command to start the PostgreSQL container
+# docker compose -f postgres-setup.yml up -d  
+
+services:
+  postgres:
+    image: postgres:17
+    container_name: postgres-bucket
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres         # default user (optional)
+      POSTGRES_PASSWORD: password     # match your CLI
+      POSTGRES_DB: mydb               # optional: create default DB
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+volumes:
+  postgres-data:
