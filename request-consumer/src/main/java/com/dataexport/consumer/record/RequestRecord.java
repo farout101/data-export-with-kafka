@@ -5,7 +5,7 @@ import com.dataexport.consumer.enu.TransactionType;
 
 import java.time.LocalDateTime;
 
-public record RecordEvent(
+public record RequestRecord(
     Integer export_id,
     FileFormat file_format,
     TransactionType transaction_type,

@@ -1,6 +1,6 @@
 package com.test.requestproducer.controller;
 
-import com.test.requestproducer.model.RequestRecord;
+import com.test.requestproducer.record.RequestRecord;
 import com.test.requestproducer.service.ProducerService;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;

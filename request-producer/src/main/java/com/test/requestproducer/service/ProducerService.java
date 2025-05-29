@@ -1,6 +1,6 @@
 package com.test.requestproducer.service;
 
-import com.test.requestproducer.model.RequestRecord;
+import com.test.requestproducer.record.RequestRecord;
 import lombok.RequiredArgsConstructor;
 import org.apache.kafka.common.KafkaException;
 import org.slf4j.Logger;

@@ -1,4 +1,4 @@
-package com.test.requestproducer.model;
+package com.test.requestproducer.enu;
 
 import lombok.Getter;
 

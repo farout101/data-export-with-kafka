@@ -1,6 +1,6 @@
 package com.dataexport.consumer.service;
 
-import com.dataexport.consumer.record.RecordEvent;
+import com.dataexport.consumer.record.RequestRecord;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.kafka.annotation.KafkaListener;
@@ -9,12 +9,15 @@ import org.springframework.stereotype.Service;
 @Service
 public class KafkaConsumerService {
 
-    public static final Logger LOGGER = LoggerFactory.getLogger(KafkaConsumerService.class);
-    public static final String TOPIC = "request-transaction-topic";
+    private static final Logger log = LoggerFactory.getLogger(KafkaConsumerService.class);
 
-
-    @KafkaListener(topics = TOPIC, groupId = "record-consumers")
-    public void consumer(RecordEvent recordEvent) {
-        LOGGER.info("Got Event -> {}", recordEvent);
+    @KafkaListener(
+            topics = "request-transaction-topic",
+            groupId = "group1",
+            containerFactory = "kafkaListenerContainerFactory"
+    )
+    public void consume(RequestRecord requestRecord) {
+        log.info("Consumed Kafka event -> {}", requestRecord);
+        // process your requestRecord here
     }
 }
