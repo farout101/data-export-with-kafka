@@ -10,9 +10,20 @@ def home_page():
     # File format selection
     file_format = st.selectbox("Select file format", ["CSV", "JSON", "XLSX"])
 
-    # Transaction record selection
-    transaction_type = st.selectbox("Select transaction record", ["Credit", "Debit", "All"])
-    transaction_type = transaction_type.upper()
+    # Mapping between display name (shown to user) and enum value (used internally)
+    transaction_display_to_enum = {
+        "ATM Transactions": "ATM",
+        "Customer Transactions": "CUSTOMER",
+        "Interbank Transactions": "INTER_BANK",
+    }
+
+    # Show selectbox with display names
+    selected_display = st.selectbox("Select transaction record", list(transaction_display_to_enum.keys()))
+
+    # Get the actual enum value
+    transaction_type = transaction_display_to_enum[selected_display]
+
+    st.write("Selected enum value for backend:", transaction_type)
 
     # Time period selection
     st.subheader("Select Start and End Time")
