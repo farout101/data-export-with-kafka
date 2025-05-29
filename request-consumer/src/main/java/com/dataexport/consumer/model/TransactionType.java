@@ -4,9 +4,9 @@ import lombok.Getter;
 
 @Getter
 public enum TransactionType {
-    DEBIT("debit"),
-    CREDIT("credit"),
-    ALL("all");
+    ATM("atm"),
+    CUSTOMER("customer"),
+    INTER_BANK("interbank");
 
     private final String type;
 
