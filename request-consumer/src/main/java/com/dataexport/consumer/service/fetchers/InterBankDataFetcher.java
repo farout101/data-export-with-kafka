@@ -3,6 +3,8 @@ package com.dataexport.consumer.service.fetchers;
 import com.dataexport.consumer.model.InterbankTransaction;
 import com.dataexport.consumer.repository.InterbankTransferRepository;
 import com.dataexport.consumer.service.interfaces.DataFetchService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,15 +14,19 @@ import java.util.List;
 @Service
 public class InterBankDataFetcher implements DataFetchService {
 
+    Logger log = LoggerFactory.getLogger(InterBankDataFetcher.class);
+
     private final InterbankTransferRepository interbankRepo;
 
     @Autowired
     public InterBankDataFetcher(InterbankTransferRepository interbankRepo) {
         this.interbankRepo = interbankRepo;
+        log.info("InterBankDataFetcher initialized with repository: {}", interbankRepo.getClass().getSimpleName());
     }
 
     @Override
     public List<InterbankTransaction> fetchData(LocalDateTime start, LocalDateTime end) {
+        log.info("Fetching InterBank transactions between {} and {}", start, end);
         return interbankRepo.findByTransactionTimeBetween(start, end);
     }
 }

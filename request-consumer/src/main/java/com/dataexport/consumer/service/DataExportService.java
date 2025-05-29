@@ -7,6 +7,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
+@Deprecated
 public class DataExportService {
 
     static void writeJson(List<Map<String, Object>> data, String filename) throws IOException {

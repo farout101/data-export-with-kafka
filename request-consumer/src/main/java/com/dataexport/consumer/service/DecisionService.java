@@ -39,6 +39,9 @@ public class DecisionService {
         LocalDateTime startDatetime = record.getStart_datetime();
         LocalDateTime endDatetime = record.getEnd_datetime();
 
+        log.info("Processing record: exportId={}, fileFormat={}, transactionType={}, startDatetime={}, endDatetime={}",
+                exportId, fileFormat, transactionType, startDatetime, endDatetime);
+
         // 1. Decide which service to use
         DataFetchService fetchService = resolveFetchService(transactionType);
 
@@ -51,26 +54,20 @@ public class DecisionService {
     }
 
     private Exporter resolveExportService(FileFormat fileFormat) {
+        log.info("Resolving export service for file format: {}", fileFormat);
         return switch (fileFormat) {
             case CSV -> csvExporter; // Replace with actual service
             case JSON -> jsonExporter; // Replace with actual service
             case XLSX -> xlsxExporter; // Replace with actual service
-            default -> {
-                log.error("Unsupported file format: {}", fileFormat);
-                throw new IllegalArgumentException("Unsupported file format: " + fileFormat);
-            }
         };
     }
 
     private DataFetchService resolveFetchService(TransactionType transactionType) {
+        log.info("Resolving fetch service for transaction type: {}", transactionType);
         return switch (transactionType) {
             case ATM -> atmDataFetcher;
             case CUSTOMER -> customerDataFetcher;
             case INTER_BANK -> interBankDataFetcher; // Replace with actual service
-            default -> {
-                log.error("Unsupported transaction type: {}", transactionType);
-                throw new IllegalArgumentException("Unsupported transaction type: " + transactionType);
-            }
         };
     }
 
