@@ -1,6 +1,6 @@
 spring:
   application:
-    name: request-producer
+    name: client-server
   kafka:
     bootstrap-servers: localhost:29092, localhost:39092, localhost:49092
     producer:
@@ -8,3 +8,13 @@ spring:
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
       properties:
         spring.json.add.type.headers: false
+    consumer:
+      group-id: group1
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: '*'
+        spring.json.use.type.headers: false
+        spring.json.value.default.type: com.test.ClientServer.model.ResponseRecord # This part is important for deserialization
+server:
+  port: 8080
