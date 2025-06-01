@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.dataexport.consumer</groupId>
-	<artifactId>request-consumer</artifactId>
+	<artifactId>main-server</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>request-consumer</name>
 	<description>Demo project for Spring Boot</description>

@@ -4,6 +4,6 @@ services:
     ports:
       - "8090:80"
     volumes:
-      - /home/farout101/Documents/GitHub/DataExport_with_Kafka/request-consumer/exported-files:/usr/share/nginx/html/exported-files:ro
+      - /home/farout101/Documents/GitHub/DataExport_with_Kafka/main-server/exported-files:/usr/share/nginx/html/exported-files:ro
       - ./nginx-default.conf:/etc/nginx/conf.d/default.conf:ro
     restart: always

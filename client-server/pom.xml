@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.test</groupId>
-    <artifactId>request-producer</artifactId>
+    <artifactId>client-server</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>request-producer</name>
     <description>request-producer</description>
