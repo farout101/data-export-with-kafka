@@ -24,9 +24,9 @@ public class ExportResponseService {
                 .collect(Collectors.toList());
     }
 
-    public void markAsDownloaded(Long exportId) {
+    public void markAsDownloaded(Integer exportId) {
         responseList.stream()
-                .filter(r -> r.getExportId().equals(exportId))
+                .filter(r -> exportId.equals(r.getExportId()))
                 .findFirst()
                 .ifPresent(r -> r.setStatus("DOWNLOADED"));
     }

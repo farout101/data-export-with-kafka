@@ -23,7 +23,7 @@ public class ClientController {
     }
 
     @PostMapping("/mark-downloaded/{exportId}")
-    public ResponseEntity<?> markAsDownloaded(@PathVariable Long exportId) {
+    public ResponseEntity<?> markAsDownloaded(@PathVariable Integer exportId) {
         exportService.markAsDownloaded(exportId);
         return ResponseEntity.ok().build();
     }
