@@ -5,7 +5,7 @@ This project implements a distributed data export system where users can request
 
 ## System Overview
 
-![Architecture Diagram](./Template/asserts/overview.png)
+![Architecture Diagram](./client-ui/asserts/overview.png)
 
 ### Flow Description
 
