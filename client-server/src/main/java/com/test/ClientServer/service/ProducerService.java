@@ -47,11 +47,13 @@ public class ProducerService {
 
     }
 
+    @SuppressWarnings("unused")
     @Recover
     public void recover(KafkaException e, RequestRecord request) {
         log.error("KafkaException: Failed to send request after retries. Fallback logic triggered for: {}", request);
     }
 
+    @SuppressWarnings("unused")
     @Recover
     public void recover(TimeoutException e, RequestRecord request) {
         log.error("TimeoutException: Kafka send timed out. Fallback logic triggered for: {}", request);

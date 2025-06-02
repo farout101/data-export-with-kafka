@@ -13,6 +13,7 @@ import com.dataexport.TransactionServer.service.fileExporter.XlsxExporter;
 import com.dataexport.TransactionServer.service.interfaces.DataFetchService;
 import com.dataexport.TransactionServer.service.interfaces.Exporter;
 import com.dataexport.TransactionServer.service.kafka.ProducerService;
+import com.dataexport.TransactionServer.service.utality.FileCleaner;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -35,6 +36,7 @@ public class ExportProcessorService {
     private final XlsxExporter xlsxExporter;
     private final PrepareResponse prepareResponse;
     private final ProducerService producerService;
+    private final FileCleaner fileCleaner;
 
     public void processRecord(RequestRecord record) {
         Integer exportId = record.getExport_id();
@@ -58,7 +60,7 @@ public class ExportProcessorService {
 
         String baseDownloadUrl = "http://localhost:8090";
         String fileName = "/export_" + exportId + "." + fileFormat.name().toLowerCase();
-
+        String fileNameWithType = fileFormat + "-files" + fileName;
 
         ResponseRecord responseRecord = prepareResponse.prepare(
                 exportId,
@@ -66,10 +68,12 @@ public class ExportProcessorService {
                 fileFormat,
                 "SUCCESS",
                 "Data exported successfully",
-                baseDownloadUrl + "/download/"+ fileFormat + "-files" + fileName
+                baseDownloadUrl + "/download/"+ fileNameWithType
         );
 
         producerService.sendRequest(responseRecord);
+
+        fileCleaner.scheduleFileDeletion(fileCleaner.getFilePath(fileNameWithType), 15);
     }
 
     private Exporter resolveExportService(FileFormat fileFormat) {
