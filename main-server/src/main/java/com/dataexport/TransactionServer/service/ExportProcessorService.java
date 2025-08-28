@@ -2,11 +2,11 @@ package com.dataexport.TransactionServer.service;
 
 import com.dataexport.TransactionServer.enu.FileFormat;
 import com.dataexport.TransactionServer.enu.TransactionType;
-import com.dataexport.TransactionServer.model.ResponseRecord;
+import com.dataexport.TransactionServer.record.ResponseRecord;
 import com.dataexport.TransactionServer.service.fetchers.AtmDataFetcher;
 import com.dataexport.TransactionServer.service.fetchers.CustomerDataFetcher;
 import com.dataexport.TransactionServer.service.fetchers.InterBankDataFetcher;
-import com.dataexport.TransactionServer.model.RequestRecord;
+import com.dataexport.TransactionServer.record.RequestRecord;
 import com.dataexport.TransactionServer.service.fileExporter.CsvExporter;
 import com.dataexport.TransactionServer.service.fileExporter.JsonExporter;
 import com.dataexport.TransactionServer.service.fileExporter.XlsxExporter;

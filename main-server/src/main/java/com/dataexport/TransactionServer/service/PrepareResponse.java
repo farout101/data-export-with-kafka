@@ -1,7 +1,7 @@
 package com.dataexport.TransactionServer.service;
 
 import com.dataexport.TransactionServer.enu.FileFormat;
-import com.dataexport.TransactionServer.model.ResponseRecord;
+import com.dataexport.TransactionServer.record.ResponseRecord;
 import org.springframework.stereotype.Service;
 
 @Service

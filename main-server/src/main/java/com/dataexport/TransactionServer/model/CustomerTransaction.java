@@ -15,20 +15,12 @@ public class CustomerTransaction {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long transactionId;
-
     private Long customerId;
-
     private Long accountId;
-
     private String transactionType;
-
     private Double amount;
-
     private String currency;
-
     private LocalDateTime transactionTime;
-
     private String location;
-
     private String status;
 }

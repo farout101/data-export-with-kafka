@@ -1,6 +1,6 @@
 package com.dataexport.TransactionServer.service.kafka;
 
-import com.dataexport.TransactionServer.model.RequestRecord;
+import com.dataexport.TransactionServer.record.RequestRecord;
 import com.dataexport.TransactionServer.service.ExportProcessorService;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;

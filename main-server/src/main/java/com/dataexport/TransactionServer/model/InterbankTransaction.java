@@ -15,22 +15,13 @@ public class InterbankTransaction {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long transferId;
-
     private String senderBankCode;
-
     private String receiverBankCode;
-
     private String senderAccount;
-
     private String receiverAccount;
-
     private Double amount;
-
     private String currency;
-
     private String transferReason;
-
     private LocalDateTime transactionTime;
-
     private String status;
 }

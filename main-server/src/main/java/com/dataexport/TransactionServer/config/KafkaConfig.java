@@ -4,8 +4,8 @@ package com.dataexport.TransactionServer.config;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.dataexport.TransactionServer.model.RequestRecord;
-import com.dataexport.TransactionServer.model.ResponseRecord;
+import com.dataexport.TransactionServer.record.RequestRecord;
+import com.dataexport.TransactionServer.record.ResponseRecord;
 import org.apache.kafka.clients.admin.AdminClientConfig;
 import org.apache.kafka.clients.admin.NewTopic;
 import org.apache.kafka.clients.consumer.ConsumerConfig;

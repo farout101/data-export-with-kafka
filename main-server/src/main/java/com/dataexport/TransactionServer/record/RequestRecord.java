@@ -1,4 +1,4 @@
-package com.dataexport.TransactionServer.model;
+package com.dataexport.TransactionServer.record;
 
 import com.dataexport.TransactionServer.enu.FileFormat;
 import com.dataexport.TransactionServer.enu.TransactionType;

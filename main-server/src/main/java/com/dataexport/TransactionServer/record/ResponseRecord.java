@@ -1,4 +1,4 @@
-package com.dataexport.TransactionServer.model;
+package com.dataexport.TransactionServer.record;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
